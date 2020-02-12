@@ -1,5 +1,7 @@
 {
   "name": "qrClient",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

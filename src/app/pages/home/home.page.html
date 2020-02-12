@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="dark">
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <img src="/assets/img/home.jpg" alt=""/>
+    <ion-card-header>
+      <ion-card-subtitle>Genere su invitacion Qr</ion-card-subtitle>
+      <ion-card-title>Bienvenido</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Opciones</ion-label>
+    </ion-list-header>
+    <ion-item fxLayout="row">
+      <img class="icon" src="/assets/icon/qr.svg" alt="">
+      <ion-label color="primary" (click)="invitar()">Generar invitacion...</ion-label>
+    </ion-item>
+    <ion-item href="https://ionicframework.com/docs/building/scaffolding">
+      <img class="icon" src="/assets/icon/qr.svg" alt="">
+      <ion-label color="primary">¿Quienes somos?</ion-label>
+    </ion-item>
+    <ion-item href="https://ionicframework.com/docs/theming/basics">
+      <img class="icon" src="/assets/icon/qr.svg" alt="">
+      <ion-label color="primary">Informacion</ion-label>
+    </ion-item>
+    <ion-item href="https://ionicframework.com/docs/layout/structure">
+      <img class="icon" src="/assets/icon/qr.svg" alt="">
+      <ion-label color="primary">Perfil</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
