@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="tertiary"></ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-title>perfil</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="padre" fxLayout="column" fxLayoutAlign="center center">
+    <img src="/assets/img/profile.svg" alt="" srcset="">
+    <ion-card>
+      <ion-card-header color="tertiary">
+        <ion-card-subtitle>Informacion del usuario</ion-card-subtitle>
+        <ion-card-title>Datos personales</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label color="tertiary" position="stacked">E-Mail</ion-label>
+            <ion-input color="medium" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="tertiary" position="stacked">Nombre</ion-label>
+            <ion-input color="medium" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="tertiary" position="stacked">Dirrecion</ion-label>
+            <ion-input color="medium" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="tertiary" position="stacked">CI</ion-label>
+            <ion-input color="medium" type="text"></ion-input>
+          </ion-item>
+          <ion-button color="tertiary" style="margin-top: 2em;" expand="block" fill="outline">
+            Guardar
+          </ion-button>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    
+  </div>
+</ion-content>

@@ -1,0 +1,39 @@
+<!-- <ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light">
+      Invitacion
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<div class="pyro">
+  <div class="before"></div>
+  <div class="after"></div>
+</div>
+<ion-content color="tertiary">
+  <div class="pyro">
+    <div class="before"></div>
+    <div class="after"></div>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center" style="height: 100%;">
+    <ion-icon class="scale-up-center" color="light" name="shield-checkmark" style="font-size: 180px; margin-top: 0;">
+    </ion-icon>
+    <ion-card class="card-invitacion" fxLayout="column" fxLayoutAlign="space-around">
+      <ion-card-header>
+        <ion-card-title color="tertiary" fxLayoutAlign="center">Invitacion</ion-card-title>
+        <ion-card-subtitle color="tertiary" fxLayoutAlign="center">Generada</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- <ion-text color="medium">
+          Lorem ipsum dolor sit amet.
+        </ion-text> -->
+        <!-- 🎉 -->
+        <ion-button (click)="irHome()" color="tertiary" expand="block" fill="outline">
+          Aceptar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

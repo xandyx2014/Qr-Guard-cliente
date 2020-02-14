@@ -10,9 +10,14 @@ export const APP_PAGES = [
         icon: 'list'
     },
     {
+        title: 'Perfil',
+        url: '/perfil',
+        icon: 'person-circle'
+    },
+    {
         title: 'Salir',
         url: '/login',
-        icon: 'list'
+        icon: 'exit'
     }
 ];
 export const ACCESSTOKENMAPBOX = 'pk.eyJ1IjoieGFuZHl4MjAxNCIsImEiOiJjangxeGFyN20wMGdkM3l1cmR5b2JxOTBrIn0.Ukkn6EsM_FS50Utt56wlwQ';

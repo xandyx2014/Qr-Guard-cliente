@@ -1,27 +1,51 @@
-
+<ion-header translucent>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button color="tertiary" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title >
+      Invitacion
+    </ion-title> -->
+  </ion-toolbar>
+</ion-header>
 <ion-content>
   <div id="mapContainer" class="mapbox">
     <img style="width: 15%; height: 15%;" src="/assets/img/marker.svg" alt="" srcset="">
   </div>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Escriba la informacion</ion-card-subtitle>
-      <ion-card-title>Cree su carta de invitacion</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <form >
-        <ion-item>
-          <ion-label position="floating" color="medium">Nombre de la persona invitada<ion-text color="danger">*</ion-text></ion-label>
-          <ion-input required  type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating" color="medium">Carnet Identidad<ion-text color="danger">*</ion-text></ion-label>
-          <ion-input required  type="text"></ion-input>
-        </ion-item>
-        <ion-button expand="full" color="light" type="submit">
-          Invitar
-        </ion-button>
-      </form>
-    </ion-card-content>
-  </ion-card>
+  <div class="hijo" fxLayout="row" fxLayoutAlign="center center">
+    <ion-card>
+      <ion-card-header color="tertiary">
+        <ion-card-subtitle>Escriba la informacion</ion-card-subtitle>
+        <ion-card-title>Cree su carta de invitacion</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form>
+          <ion-list>
+            <ion-item fxLayoutAlign="center center">
+              <ion-label position="stacked" color="tertiary">Nombre de la persona invitada<ion-text color="danger">*
+                </ion-text>
+              </ion-label>
+              <ion-input required type="text"></ion-input>
+              <ion-icon color="medium" name="person" slot="end" class="suffix-icon"></ion-icon>
+            </ion-item>
+            <ion-item (click)="obtenerFecha()">
+              <ion-label position="stacked" color="tertiary">Limite fecha invitacion<ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input [value]="fecha" required type="text"></ion-input>
+              <ion-icon color="medium" name="calendar" slot="end" class="suffix-icon"></ion-icon>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked" color="tertiary">Descripcion</ion-label>
+              <ion-textarea  maxlength="200"></ion-textarea>
+              <ion-icon color="medium" name="document" slot="end" class="suffix-icon"></ion-icon>
+            </ion-item>
+          </ion-list>
+
+          <ion-button style="margin-top: 2em;" (click)="realizarInvitacion()" expand="block" fill="outline" color="tertiary" type="submit">
+            Invitar
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

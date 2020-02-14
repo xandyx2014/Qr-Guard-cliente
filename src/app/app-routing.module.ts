@@ -22,6 +22,14 @@ const routes: Routes = [
   {
     path: 'invitacion',
     loadChildren: () => import('./pages/invitacion/invitacion.module').then( m => m.InvitacionPageModule)
+  },
+  {
+    path: 'show-message',
+    loadChildren: () => import('./pages/show-message/show-message.module').then( m => m.ShowMessagePageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 ];
 

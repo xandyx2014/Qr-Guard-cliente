@@ -3,6 +3,10 @@ import * as mapboxgl from 'mapbox-gl';
 import { ACCESSTOKENMAPBOX } from 'src/app/config/env.conf';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import * as qrious from 'qrious';
+import { format, addYears } from 'date-fns';
+import { MenuController } from '@ionic/angular';
+import { DatePicker } from '@ionic-native/date-picker/ngx';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-invitacion',
   templateUrl: './invitacion.page.html',
@@ -12,11 +16,16 @@ export class InvitacionPage implements OnInit, AfterViewInit {
   map: mapboxgl.Map;
   marker: mapboxgl.Marker;
   buttonDesactivado = true;
+  fecha = '';
   constructor(
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    private menu: MenuController,
+    private datePicker: DatePicker,
+    private router: Router
   ) { }
 
   ngOnInit() {
+    this.menu.enable(false);
     const qr = new qrious({
       element: document.getElementById('qr'),
       value: 'https://github.com/neocotic/qrious',
@@ -24,12 +33,26 @@ export class InvitacionPage implements OnInit, AfterViewInit {
       size: 250
     });
   }
+  obtenerFecha() {
+    this.datePicker.show({
+      date: new Date(),
+      mode: 'date',
+      minDate: format(new Date(), 'T'),
+      titleText: 'Seleccione su fecha de Expiracion',
+      androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_LIGHT
+    }).then(
+      date => {
+        this.fecha = format(date, 'dd-MM-yyyy');
+      },
+      err => console.log('Error occurred while getting date: ', err)
+    );
+  }
   ionViewWillEnter() {
     this.geolocation.getCurrentPosition().then((resp) => {
       // resp.coords.latitude
-      console.log(resp.coords.latitude);
+      // console.log(resp.coords.latitude);
       // resp.coords.longitude
-      console.log(resp.coords.longitude);
+      // console.log(resp.coords.longitude);
       this.map = new mapboxgl.Map({
         container: 'mapContainer',
         style: 'mapbox://styles/mapbox/light-v10?optimize=true',
@@ -52,6 +75,9 @@ export class InvitacionPage implements OnInit, AfterViewInit {
      });
   }
   ngAfterViewInit(): void {
+  }
+  realizarInvitacion() {
+    this.router.navigate(['show-message']);
   }
 
 }
